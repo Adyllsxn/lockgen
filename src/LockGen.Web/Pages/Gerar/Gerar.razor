@@ -1,0 +1,49 @@
+﻿@page "/gerar"
+@inherits AnalizarPage
+
+<h3>Analise uma Senha</h3>
+<input type="text" @bind="manualPassword" placeholder="Digite uma senha..." />
+<button @onclick="AnalyzePassword">Analisar</button>
+
+<p>Força da Senha Manual: <span style="color:@manualStrengthColor">@manualPasswordStrength</span></p>
+
+@code {
+    private int passwordLength = 12;
+    private bool useUppercase = true;
+    private bool useDigits = true;
+    private bool useSpecial = true;
+    private string password = "";
+    private string passwordStrength = "";
+    private string strengthColor = "black";
+    private string copyMessage = "";
+    
+    private string manualPassword = "";
+    private string manualPasswordStrength = "";
+    private string manualStrengthColor = "black";
+
+    private void GeneratePassword()
+    {
+        password = PasswordGenerator.Generate(passwordLength, useUppercase, useDigits, useSpecial);
+        passwordStrength = PasswordStrengthChecker.GetStrength(password);
+        strengthColor = GetStrengthColor(passwordStrength);
+        copyMessage = "";
+    }
+
+    private void AnalyzePassword()
+    {
+        manualPasswordStrength = PasswordStrengthChecker.GetStrength(manualPassword);
+        manualStrengthColor = GetStrengthColor(manualPasswordStrength);
+    }
+
+    private string GetStrengthColor(string strength)
+    {
+        return strength switch
+        {
+            "Muito Fraca" => "red",
+            "Fraca" => "orange",
+            "Razoável" => "yellow",
+            "Forte" => "lightgreen",
+            _ => "green"
+        };
+    }
+}

@@ -1,0 +1,61 @@
+﻿@inject IJSRuntime JS
+
+@page "/analizar"
+@inherits AnalizarPage
+
+<h3>LockGen - Gerador de Senhas</h3>
+
+<label>Tamanho da Senha:</label>
+<input type="number" @bind="passwordLength" min="4" max="32" />
+
+<div>
+    <input type="checkbox" @bind="useUppercase" /> Maiúsculas
+    <input type="checkbox" @bind="useDigits" /> Números
+    <input type="checkbox" @bind="useSpecial" /> Especiais
+</div>
+
+<button @onclick="GeneratePassword">Gerar</button>
+<button @onclick="CopyPassword" disabled="@string.IsNullOrEmpty(password)">Copiar Senha</button>
+
+<p>Senha: <strong>@password</strong></p>
+<p>Força: <span style="color:@strengthColor">@passwordStrength</span></p>
+
+@if (!string.IsNullOrEmpty(copyMessage))
+{
+    <p style="color: green;">@copyMessage</p>
+}
+
+@code {
+    private int passwordLength = 12;
+    private bool useUppercase = true;
+    private bool useDigits = true;
+    private bool useSpecial = true;
+    private string password = "";
+    private string passwordStrength = "";
+    private string strengthColor = "black";
+    private string copyMessage = "";
+
+    private async Task GeneratePassword()
+    {
+        password = PasswordGenerator.Generate(passwordLength, useUppercase, useDigits, useSpecial);
+        passwordStrength = PasswordStrengthChecker.GetStrength(password);
+        strengthColor = passwordStrength switch
+        {
+            "Muito Fraca" => "red",
+            "Fraca" => "orange",
+            "Razoável" => "yellow",
+            "Forte" => "lightgreen",
+            _ => "green"
+        };
+        copyMessage = ""; // Reseta mensagem ao gerar nova senha
+    }
+
+    private async Task CopyPassword()
+    {
+        if (!string.IsNullOrEmpty(password))
+        {
+            await JS.InvokeVoidAsync("copyToClipboard", password);
+            copyMessage = "Senha copiada com sucesso!";
+        }
+    }
+}

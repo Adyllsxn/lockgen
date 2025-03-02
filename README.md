@@ -1,15 +1,26 @@
 # LockGen
-
+LockGen é um gerador e analisador de senhas desenvolvido em C# e Blazor WebAssembly. Ele permite criar senhas seguras e verificar sua força com base em critérios personalizados.
 ---
 
 ## Funcionalidades
+### Gerador de senhas aleatórias
+    - Definir o tamanho da senha
+    - Escolher se incluirá letras maiúsculas, números e caracteres especiais
 
+### Analisador de força da senha
+#### Classificação visual com cores:
+    - Vermelho: Muito Fraca
+    - Laranja: Fraca
+    - Amarelo: Razoável
+    - Verde-claro: Forte
+    - Verde: Muito Forte
+#### Sugestões de senhas caso a inserida seja fraca
 ---
 
 ## Tecnologias Utilizadas
 
 ### Frontend
-1. **Blazor**: Framework para desenvolvimento do frontend interativo e moderno.
+1. **Blazor Wasm**: Framework para desenvolvimento do frontend interativo e moderno.
 2. **MudBlazor**: Biblioteca de componentes para Blazor.
 3. **JavaScript**: Para integração com bibliotecas e funcionalidades adicionais.
 4. **HTML**: Para a estrutura das páginas.
