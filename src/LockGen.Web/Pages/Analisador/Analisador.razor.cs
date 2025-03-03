@@ -1,7 +1,7 @@
-namespace LockGen.Web.Pages.Gerar;
-public partial class GerarPage : ComponentBase
+namespace LockGen.Web.Pages.Analisador;
+public partial class AnalisadorRazor : ComponentBase
 {
-
+    
     #region </Proprieties>
         public int passwordLength = 12;
         public string generatedPassword = "";

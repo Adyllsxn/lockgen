@@ -1,7 +1,7 @@
-namespace LockGen.Web.Pages.Analizar;
-public partial class AnalizarPage : ComponentBase
+namespace LockGen.Web.Pages.Gerador;
+public partial class GeradorRazor : ComponentBase
 {
-   private int passwordLength = 12;
+    private int passwordLength = 12;
         private bool useUppercase = true;
         private bool useDigits = true;
         private bool useSpecial = true;
@@ -78,6 +78,5 @@ public partial class AnalizarPage : ComponentBase
                 4 => "Forte",
                 _ => "Muito Forte"
             };
-        }
-
+        }    
 }

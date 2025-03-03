@@ -1,3 +1,69 @@
+/*          </LOCKGEN>*/
+.loading-lockgen{
+    height: 100vh;
+}
+.loading-lockgen .logo-lockgen{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.loading-lockgen{
+    width: 600px;
+}
+
+
+.loading-lockgen h1{
+    width: 600px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    color: #e0e0e0;
+    text-shadow: 1px 2px 0px #000000da;
+}
+.loading-lockgen h1 span{
+    font-weight: 300;
+}
+
+.glitch {
+    position: relative;
+    display: inline-block;
+    color: black;
+    font-weight: bold;
+    animation: glitch 0.5s infinite;
+}
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(2px, -2px); }
+    60% { transform: translate(-2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+/*          <LOADING>*/
+
+/*      </CONFIGURATION>     */
+body{
+    background-color: #18191ffb;
+}
+
+/*      </CONFIGURATION>*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .valid.modified:not([type=checkbox]) {
     outline: 1px solid #26b050;
 }

@@ -1,12 +1,23 @@
-﻿@page "/gerar"
-@inherits AnalizarPage
+﻿@page "/analisador"
+@inherits AnalisadorRazor
 
-<h3>Analise uma Senha</h3>
-<input type="text" @bind="manualPassword" placeholder="Digite uma senha..." />
-<button @onclick="AnalyzePassword">Analisar</button>
+<div class="inicialBg">
+    <div class="TelaCard">
+        <div class="logo">
+            <h1>Lock<span>Gen</span></h1>
+            <p>Analise a força da sua senha</p>
+        </div>
 
-<p>Força da Senha Manual: <span style="color:@manualStrengthColor">@manualPasswordStrength</span></p>
+        <div class="analise">
+            <h3>Analise uma Senha</h3>
+            <input type="text" @bind="manualPassword" placeholder="Digite uma senha..." />
+            <button @onclick="AnalyzePassword">Analisar</button>
 
+            <p>Força da Senha Manual: <span style="color:@manualStrengthColor">@manualPasswordStrength</span></p>
+        </div>
+
+    </div>
+</div>
 @code {
     private int passwordLength = 12;
     private bool useUppercase = true;
@@ -47,3 +58,4 @@
         };
     }
 }
+

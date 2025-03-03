@@ -7,19 +7,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1795EADC-DB0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LockGen.Web", "src\LockGen.Web\LockGen.Web.csproj", "{3F1F7526-519C-48A7-9518-E19FCD8C588B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "doc", "doc", "{6F7BC048-0A70-B1BE-8A35-89890EA57E92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3F1F7526-519C-48A7-9518-E19FCD8C588B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3F1F7526-519C-48A7-9518-E19FCD8C588B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F1F7526-519C-48A7-9518-E19FCD8C588B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F1F7526-519C-48A7-9518-E19FCD8C588B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{3F1F7526-519C-48A7-9518-E19FCD8C588B} = {1795EADC-DB0F-46AB-8653-7B1E2358A110}
