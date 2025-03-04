@@ -1,6 +1,8 @@
 .inicialBg{
     background-image: linear-gradient(45deg, var(--color001), var(--color002));
     height: 100vh;
+    width: 90%;
+    padding: 0 4%;
 }
 .TelaCard{
     background-color:   rgba(255, 255, 255, 0.2);
@@ -15,6 +17,7 @@
     justify-items: center;
     align-items: center;
     flex-direction: column;
+    width: 70%;
 }
 
 .TelaCard .logo h1{

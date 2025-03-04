@@ -9,15 +9,17 @@
         </div>
 
         <div class="analise">
-            <h3>Analise uma Senha</h3>
             <input type="text" @bind="manualPassword" placeholder="Digite uma senha..." />
-            <button @onclick="AnalyzePassword">Analisar</button>
-
-            <p>Força da Senha Manual: <span style="color:@manualStrengthColor">@manualPasswordStrength</span></p>
+            <p>
+                Força da Senha Manual: <span style="color:@manualStrengthColor">@manualPasswordStrength</span>
+            </p>
         </div>
 
         <div class="botao">
-            <a href="/">
+            <a>
+                <button @onclick="AnalyzePassword">Analisar</button>
+            </a>
+            <a href="">
                 <button>Voltar</button>
             </a>
         </div>

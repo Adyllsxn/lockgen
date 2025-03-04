@@ -10,28 +10,40 @@
         </div>
 
         <div class="gerar">
-            <label>Tamanho da Senha:</label>
-            <input type="number" @bind="passwordLength" min="4" max="32" />
-
+            
             <div>
+                <label>Tamanho da Senha:</label>
+                <input type="number" @bind="passwordLength" min="4" max="32" />
+            </div>
+
+            <div class="checkbox">
                 <input type="checkbox" @bind="useUppercase" /> Maiúsculas
                 <input type="checkbox" @bind="useDigits" /> Números
                 <input type="checkbox" @bind="useSpecial" /> Especiais
             </div>
+            
+            <div class="botao">
+                <a>
+                    <button @onclick="GeneratePassword">Gerar</button>
+                </a>
 
-            <button @onclick="GeneratePassword">Gerar</button>
-            <button @onclick="CopyPassword" disabled="@string.IsNullOrEmpty(password)">Copiar Senha</button>
+                <a>
+                    <button @onclick="CopyPassword" disabled="@string.IsNullOrEmpty(password)">Copiar Senha</button>
+                </a>
+                
 
-            <p>Senha: <strong>@password</strong></p>
-            <p>Força: <span style="color:@strengthColor">@passwordStrength</span></p>
-            @if (!string.IsNullOrEmpty(copyMessage))
-            {
-                <p style="color: green;">@copyMessage</p>
-            }
+                <p>Senha: <strong>@password</strong></p>
+                <p>Força: <span style="color:@strengthColor">@passwordStrength</span></p>
+                @if (!string.IsNullOrEmpty(copyMessage))
+                {
+                    <p style="color: green;">@copyMessage</p>
+                }
+            </div>
+            
         </div>
 
         <div class="botao">
-            <a href="/">
+            <a href="">
                 <button>Voltar</button>
             </a>
         </div>

@@ -1,0 +1,21 @@
+.gerar{
+    color: #e0e0e0;
+}
+.gerar div{
+    padding: 7px 0;
+}
+.gerar input{
+    padding: 15px 15px;
+    border-radius: 5px;
+    border: none;
+}
+.gerar .checkbox{
+    color: #e0e0e0;
+}
+.gerar label, p{
+    color: #e0e0e0;
+}
+.gerar .strong{
+
+    color: blueviolet;
+}
